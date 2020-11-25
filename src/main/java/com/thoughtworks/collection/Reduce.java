@@ -13,14 +13,14 @@ public class Reduce {
     }
 
     public double getAverage() {
-        throw new NotImplementedException();
+        return arrayList.stream().reduce(0, Integer::sum).doubleValue() / arrayList.size();
     }
 
     public int getMaxValue() {
-        throw new NotImplementedException();
+        return arrayList.stream().reduce(arrayList.get(0), (max, item) -> max > item ? max : item);
     }
 
     public int getLastOdd() {
-        throw new NotImplementedException();
+        return arrayList.stream().reduce(0, (lastOdd, item) -> item % 2 == 1 ? item : lastOdd);
     }
 }
